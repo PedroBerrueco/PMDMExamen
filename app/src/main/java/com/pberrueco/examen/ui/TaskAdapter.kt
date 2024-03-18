@@ -19,10 +19,10 @@ class TaskAdapter() : ListAdapter<TaskResponse, TaskAdapter.BaseViewHolder>(Base
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val Item = getItem(position)
         //TODO Pintar datos
-        holder.binding.tvTittle.text = Item.title // Si no fuera String, seria necesario .toString() detrás
-        holder.binding.tvSubjetc.text = "${Item.subject.title} - ${Item.subject.classX} "
-        holder.binding.tvTeacher.text = Item.teacherName
-        holder.binding.tvDeadline.text = Item.date
+        holder.binding.tvTittle.text = Item.taskTitle // Si no fuera String, seria necesario .toString() detrás
+        holder.binding.tvSubjetc.text = Item.project.title
+        holder.binding.tvTeacher.text = Item.employee
+        holder.binding.tvDeadline.text = Item.deadLine
     }
 
     inner class BaseViewHolder (val binding: ItemBaseBinding): RecyclerView.ViewHolder(binding.root)
