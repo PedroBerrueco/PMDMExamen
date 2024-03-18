@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun observeViewModel() {
         viewModel.userName.observe(this) { userName ->
             if (userName != null) {
-                viewModel.getHomeWork(userName)
+                viewModel.getTask(userName)
             }
         }
         viewModel.homeWorkResponse.observe(this, Observer { response ->

@@ -30,10 +30,10 @@ class MainViewModel : ViewModel() {
 
     }
 
-    fun getHomeWork(userName: String) {
+    fun getTask(userName: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = TaskApi.service.getHomeWork(userName, "u-tad")
+                val response = TaskApi.service.getHomeWork(userName, "departament1")
                 if (response.isSuccessful) {
                     val homeWorkList = response.body()
                     _homeWorkResponse.postValue(homeWorkList!!)

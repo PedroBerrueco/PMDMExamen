@@ -20,8 +20,8 @@ class TaskAdapter() : ListAdapter<TaskResponse, TaskAdapter.BaseViewHolder>(Base
         val Item = getItem(position)
         //TODO Pintar datos
         holder.binding.tvTittle.text = Item.taskTitle // Si no fuera String, seria necesario .toString() detrás
-        holder.binding.tvSubjetc.text = Item.project.title
-        holder.binding.tvTeacher.text = Item.employee
+        holder.binding.tvProject.text = Item.project.title
+        holder.binding.tvEmployee.text = Item.employee
         holder.binding.tvDeadline.text = Item.deadLine
     }
 
