@@ -3,7 +3,7 @@ package com.pberrueco.examen.data.network.model
 
 import com.google.gson.annotations.SerializedName
 
-data class BaseModel(
+data class TaskResponse(
     @SerializedName("dead_line")
     val deadLine: String,
     @SerializedName("description")

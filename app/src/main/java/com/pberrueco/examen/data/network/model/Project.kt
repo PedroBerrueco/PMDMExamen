@@ -11,7 +11,7 @@ data class Project(
     @SerializedName("project_dead_line")
     val projectDeadLine: String,
     @SerializedName("project_photo")
-    val projectPhoto: String,
+    val projectPhoto: Any,
     @SerializedName("title")
     val title: String
 )

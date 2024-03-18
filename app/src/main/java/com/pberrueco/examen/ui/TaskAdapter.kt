@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.pberrueco.examen.data.network.model.TaskResponse
 import com.pberrueco.examen.databinding.ItemBaseBinding
 
-class BaseRVAdapter() : ListAdapter<BaseModel, BaseRVAdapter.BaseViewHolder>(BaseItemCallback) {
+class TaskAdapter() : ListAdapter<TaskResponse, TaskAdapter.BaseViewHolder>(BaseItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -27,12 +28,12 @@ class BaseRVAdapter() : ListAdapter<BaseModel, BaseRVAdapter.BaseViewHolder>(Bas
     inner class BaseViewHolder (val binding: ItemBaseBinding): RecyclerView.ViewHolder(binding.root)
 }
 
-object BaseItemCallback: DiffUtil.ItemCallback<BaseModel>(){
-    override fun areItemsTheSame(oldItem: BaseModel, newItem: BaseModel): Boolean {
+object BaseItemCallback: DiffUtil.ItemCallback<TaskResponse>(){
+    override fun areItemsTheSame(oldItem: TaskResponse, newItem: TaskResponse): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: BaseModel, newItem: BaseModel): Boolean {
+    override fun areContentsTheSame(oldItem: TaskResponse, newItem: TaskResponse): Boolean {
         return oldItem == newItem
     }
 }
